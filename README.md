@@ -42,6 +42,7 @@ This repository hosts a simple web application for managing notes using Flask.
    ````
 
 3. **Install dependencies:**
+
    Use `pip` to install required packages listed in requirements.txt:
 
      ```bash
@@ -51,6 +52,7 @@ This repository hosts a simple web application for managing notes using Flask.
 ### Usage
 
    1. **Run the application:**
+
       Start the Flask server to run the application locally:
 
       ```bash
@@ -62,6 +64,7 @@ This repository hosts a simple web application for managing notes using Flask.
 ### Tests
 
    1. **Run test:**
+   
       Use `pytest` to execute the test suite for the application:
 
       ````bash
