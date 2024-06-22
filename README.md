@@ -26,6 +26,7 @@ This repository hosts a simple web application for managing notes using Flask.
    ```
 
 2. **Set up a virtual environment:**
+
    Create and activate a virtual environment to manage dependencies:
 
    ```bash
