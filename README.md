@@ -48,6 +48,24 @@ This repository hosts a simple web application for managing notes using Flask.
      ```bash
    pip install -r requirements.txt
      ```
+   Set up Docker on your machine
+      ```bash
+      sudo apt-get update
+      sudo apt install docker.io docker-compose docker-buildx
+      ```
+   Test Docker 
+      ```bash
+      sudo groupadd docker
+      docker run hello-world
+      ```
+   Make sure that Docker service is enabled 
+      ```bash
+      sudo systemctl status docker
+      ```
+   If It's not enabled
+      ```bash
+      sudo systemctl enable docker
+      ```
 
 ### Usage
 
@@ -85,10 +103,39 @@ notes_app/
      ├── venv/                  # Virtual environment folder (ignored in .gitignore)
      └── requirements.txt       # List of dependencies
 ````
-
+|
+|
 ### Best Practices Followed
 
    - **Virtual Environment**: Utilization of `venv` for package management, ensuring a clean environment isolated from system-wide Python packages.
    - **Separation of Concerns**: HTML templates are stored in the `templates/` directory, maintaining separation between front-end and back-end logic.
    - **Testing**: Integration of automated tests (`pytest`) to verify application functionality, ensuring reliability and consistency.
 
+### Running the application in Docker
+
+   1. **Login With Docker**
+
+   ````bash
+      docker login username
+   ````
+  enter your username on dockerhub
+   
+   2. **Pull Image From DockerHub**
+    
+   ````bash
+      docker pull bassma/flasknoteapp
+   ````
+   3. **Run Docker Container**
+
+   ````bash
+      docker run -p 5000:5000 --name appcontainer bassma/flasknoteapp
+   ````
+  
+application will be accessible at http://127.0.0.1:5000
+   
+### Run the application with an nginx webserver 
+
+   ```bash
+   docker-compose up --build
+   ```
+application will be accessible at http://127.0.0.1
