@@ -103,8 +103,6 @@ notes_app/
      ├── venv/                  # Virtual environment folder (ignored in .gitignore)
      └── requirements.txt       # List of dependencies
 ````
-|
-|
 ### Best Practices Followed
 
    - **Virtual Environment**: Utilization of `venv` for package management, ensuring a clean environment isolated from system-wide Python packages.
