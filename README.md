@@ -2,6 +2,8 @@
 
 This repository hosts a simple web application for managing notes using Flask.
 
+![CI/CD Pipeline](https://github.com/bassma-khaled14 /Note-App /actions/workflows/python-app.yml/badge.svg)
+
 ### Features
 
    - Add new notes.
