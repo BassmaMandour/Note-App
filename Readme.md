@@ -2,7 +2,7 @@
 
 This repository hosts a simple web application for managing notes using Flask.
 
-![CI/CD Pipeline](https://github.com/bassma-khaled14 /Note-App /actions/workflows/python-app.yml/badge.svg)
+![CI/CD Pipeline](https://github.com/bassma-khaled14/Note-App/actions/workflows/python-app.yml/badge.svg)
 
 ### Features
 
@@ -121,23 +121,4 @@ application will be accessible at http://127.0.0.1:5000
    ```bash
    docker-compose up --build
    ```
-application will be accessible at http://127.0.0.1
-0 comments on commit 10db364
-@bassma-khaled14
-Comment
 
-Leave a comment
-
-You’re receiving notifications because you’re watching this repository.
-Footer
-© 2024 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact
-
-loaded diff for README.md
