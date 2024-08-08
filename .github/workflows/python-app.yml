@@ -53,3 +53,4 @@ jobs:
       run: |
         docker build -t bassma/flasknoteapp .
         docker push bassma/flasknoteapp
+    
