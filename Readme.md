@@ -121,4 +121,24 @@ application will be accessible at http://127.0.0.1:5000
    ```bash
    docker-compose up --build
    ```
+### Ansible Playbook for Docker Deployment 
+This Ansible playbook deploys a Docker container from DockerHub. It performs the following steps:
 
+- **Ensure Docker is installed**
+- **Pull the Docker image from DockerHub**
+- **Run the Docker container**
+
+**Running the Playbook**
+
+**1.** **Ensure Ansible is installed:**
+```bash
+pip install ansible
+```
+**2.** **Run the playbook:**
+
+```bash
+ansible-playbook -i localhost, --connection=local --ask-become-pass deploy.yml
+```
+**screenshot of ansbile-playbook after run command**
+
+![Ansible Playbook Screenshot](assets/Screenshot_20240817_012346.png)
