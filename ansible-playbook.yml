@@ -1,0 +1,26 @@
+---
+- name: Deploy Docker Container from DockerHub
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+
+    - name: Pull the Docker image from DockerHub
+      community.docker.docker_image:
+        name: bassma/flasknoteapp
+        tag: latest
+        source: pull
+
+    - name: Run the Docker container
+      community.docker.docker_container:
+        name: your_app_container
+        image: bassma/flasknoteapp:latest
+        state: started
+        ports:
+          - "5000:5000"
