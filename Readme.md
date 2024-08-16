@@ -128,7 +128,7 @@ This Ansible playbook deploys a Docker container from DockerHub. It performs the
 - **Pull the Docker image from DockerHub**
 - **Run the Docker container**
 
-**Running the Playbook**
+### Running the Playbook ###
 
 **1.** **Ensure Ansible is installed:**
 ```bash
