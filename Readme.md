@@ -137,8 +137,29 @@ pip install ansible
 **2.** **Run the playbook:**
 
 ```bash
-ansible-playbook -i localhost, --connection=local --ask-become-pass deploy.yml
+ansible-playbook -i localhost, --connection=local --ask-become-pass --become-method=sudo ansible-playbook.yml
 ```
 **screenshot of ansbile-playbook after run command**
 
 ![Ansible Playbook Screenshot](assets/Screenshot_20240817_012346.png)
+
+## Provisioning Three EC2 Instances on AWS Using Terraform 
+
+**1.** **Create instance using terraform** 
+
+**1.1** **intialize terraform**
+```bash
+cd Terraform
+
+terraform init
+```
+**1.2** **Plan the Deployement** 
+```bash
+terraform plan
+
+terraform apply
+```
+**2.** **Connect to  instance using Ansible** 
+```bash
+ansible-playbook -i hosts.ini "name of your ansible yaml file"
+```
