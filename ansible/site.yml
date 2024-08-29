@@ -24,8 +24,9 @@
 
     - name: Add Docker repository
       apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
         state: present
+        filename: docker
 
     - name: Update apt packages after adding Docker repository
       apt:
@@ -42,18 +43,16 @@
         state: started
         enabled: yes
 
-    
-
     - name: Pull Docker image from DockerHub
-      docker_image:
-        name: bassma/flasnoteapp:latest
+      community.docker.docker_image:
+        name: bassma/flasknoteapp
         source: pull
 
     - name: Run Docker container
-      docker_container:
+      community.docker.docker_container:
         name: calculator-container
-        image: bassma/flasnoteapp:latest
+        image: bassma/flasknoteapp
         state: started
         restart_policy: always
         ports:
-          - "80:5000" # Adjust ports as needed
+          - "80:5000"
