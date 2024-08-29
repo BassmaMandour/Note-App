@@ -149,7 +149,7 @@ ansible-playbook -i localhost, --connection=local --ask-become-pass --become-met
 
 **1.1** **intialize terraform**
 ```bash
-cd Terraform
+cd terraform
 
 terraform init
 ```
@@ -159,7 +159,13 @@ terraform plan
 
 terraform apply
 ```
-**2.** **Connect to  instance using Ansible** 
+***output when 3 instance created*** 
+![terraform screenshot](assets/Screenshot_20240829_155253.png)
+
+**2.** **Connect to instance using Ansible** 
 ```bash
 ansible-playbook -i hosts.ini "name of your ansible yaml file"
 ```
+***output when connected to 3 instances*** 
+
+![ansible connected](assets/Screenshot_20240829_154826.png)
