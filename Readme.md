@@ -169,3 +169,37 @@ ansible-playbook -i hosts.ini "name of your ansible yaml file"
 ***output when connected to 3 instances*** 
 
 ![ansible connected](assets/Screenshot_20240829_154826.png)
+
+### Minikube Deployment
+
+**1.** **install minikube** 
+```bash
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+sudo apt install -y virtualbox virtualbox-ext-pack
+sudo snap install kubectl --classic
+kubectl config use-context minikube
+```
+**2.** **start minikube** 
+```bash
+minikube start
+````
+```bash
+# Apply namespace
+kubectl apply -f namespace.yml
+
+# Deploy the application
+kubectl apply -f deployment.yml
+
+# Create the service
+kubectl apply -f service.yml
+
+# Set up ingress
+kubectl apply -f ingress.yml
+````
+**3.** **Accessing the Application**
+```bash
+minikube service yourappname-service -n yourapp
+```
+## Note: 
+Replace 'yourappname' with your actual service name and 'yourapp' with your namespace and automatic browser will launch
