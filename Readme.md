@@ -225,4 +225,4 @@ kubectl describe pod  -n <namespace>
     Create Dashboards:
         Navigate to Dashboards -> New Dashboard.
         Add panels and queries to visualize metrics collected by Prometheus.
-![grafana dashboard](assets/Screenshot_20240831_143047.png)
+![grafana dashboard](assets/Screenshot_20240831_152719.png)
