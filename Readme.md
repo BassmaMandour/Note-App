@@ -186,16 +186,16 @@ minikube start
 ````
 ```bash
 # Apply namespace
-kubectl apply -f namespace.yml
+kubectl apply -f namespace.yaml
 
 # Deploy the application
-kubectl apply -f deployment.yml
+kubectl apply -f deployment.yaml
 
 # Create the service
-kubectl apply -f service.yml
+kubectl apply -f service.yaml
 
 # Set up ingress
-kubectl apply -f ingress.yml
+kubectl apply -f ingress.yaml
 ````
 **3.** **Accessing the Application**
 ```bash
