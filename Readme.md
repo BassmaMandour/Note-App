@@ -199,7 +199,30 @@ kubectl apply -f ingress.yml
 ````
 **3.** **Accessing the Application**
 ```bash
-minikube service yourappname-service -n yourapp
+minikube service <service> -n <namespace>
 ```
-## Note: 
-Replace 'yourappname' with your actual service name and 'yourapp' with your namespace and automatic browser will launch
+**4.** **To access a specific pod in a Kubernetes cluster**
+```bash
+kubectl get pod -n <namespace>
+kubectl describe pod  -n <namespace>
+```
+### Monitoring and Visualization
+**Grafana and Prometheus**
+   - **Prometheus** :Open your web browser and navigate to http://localhost:9090. You should see the Prometheus web UI where you can query and view metrics.
+
+   - **Grafana** : Open your web browser and navigate to http://localhost:3000. The default login credentials are:
+
+        Username: admin  
+        Password: admin
+
+**Configure Grafana**
+
+    Login to Grafana: Use the default credentials mentioned above.
+    Add Prometheus as a Data Source:
+        Go to Configuration -> Data Sources.
+        Click Add data source and select Prometheus.
+        Set the URL to http://prometheus:9090 and click Save & Test.
+    Create Dashboards:
+        Navigate to Dashboards -> New Dashboard.
+        Add panels and queries to visualize metrics collected by Prometheus.
+![grafana dashboard](assets/Screenshot_20240831_143047.png)
