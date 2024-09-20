@@ -4,7 +4,6 @@ metadata:
   name: note-app-service
   namespace: note-app
 spec:
-  type: NodePort
   selector:
     app: note-app
   ports:
