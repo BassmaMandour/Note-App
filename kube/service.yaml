@@ -7,5 +7,5 @@ spec:
   selector:
     app: note-app
   ports:
-  - port: 3200
+  - port: 80
     targetPort: 5000
