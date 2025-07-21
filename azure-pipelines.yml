@@ -4,16 +4,21 @@
 # https://aka.ms/yaml
 
 trigger:
-        - main
+  - main
+
 pool:
-    vmImage: 'ubuntu-latest'
-variables:
-    imageName: 'demo-pipelines-docker'
+  vmImage: ubuntu-latest
 
 steps:
-  - task: Docker@2
-    displayName: Build the demo image
+  - task: UsePythonVersion@0
     inputs:
-      repository: $(imageName)
-      command: build
-      Dockerfile: app/Dockerfile
+      versionSpec: '3.x'
+  
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      python -m unittest discover tests
+    displayName: 'Run tests'
