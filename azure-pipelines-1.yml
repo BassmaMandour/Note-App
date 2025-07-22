@@ -4,11 +4,28 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+  - main
 
 pool:
-  name: Default
+  name: Default  
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - script: echo "Starting transactional stress test"
+
+  - script: |
+      sudo apt-get update
+      sudo apt-get install -y wget unzip
+      wget https://github.com/grafana/k6/releases/download/v0.48.0/k6-v0.48.0-linux-amd64.zip
+      unzip k6-v0.48.0-linux-amd64.zip
+      sudo cp k6-v0.48.0-linux-amd64/k6 /usr/local/bin/
+    displayName: 'Install k6'
+
+  - script: |
+      echo "Running k6 stress test..."
+      k6 run stress-test.js
+    displayName: 'Run transactional stress test'
+
+  - script: |
+      echo "Monitoring CPU usage during test"
+      top -b -n 1 | head -20
+    displayName: 'Capture CPU snapshot'
